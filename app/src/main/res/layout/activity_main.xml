@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_grey">
+
+    <!-- Red header banner -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/blood_red"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🩸"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rakta-Vahini"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtered Blood Donor Network"
+            android:textColor="#FFCDD2"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Buttons section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnFindBlood"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="🔍  Find Blood Now"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/blood_red"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="➕  Register as Donor"
+            android:textSize="18sp"
+            android:textColor="@color/blood_red"
+            android:backgroundTint="@color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <Button
+            android:id="@+id/btnMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="👤  My Donor Profile"
+            android:textSize="16sp"
+            android:textColor="@color/medium_grey"
+            android:backgroundTint="@color/background_grey"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnDonationLog"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="📋  My Donation Log"
+            android:textSize="16sp"
+            android:textColor="@color/medium_grey"
+            android:backgroundTint="@color/background_grey" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Every second counts. Be someone's lifeline."
+        android:textColor="@color/medium_grey"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:padding="16dp" />
+
+</LinearLayout>

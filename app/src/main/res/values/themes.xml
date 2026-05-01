@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.RaktaVahini" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blood_red</item>
+        <item name="colorPrimaryDark">@color/blood_red_dark</item>
+        <item name="colorAccent">@color/blood_red_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/background_grey</item>
+        <item name="android:statusBarColor">@color/blood_red_dark</item>
+    </style>
+</resources>

@@ -1,0 +1,93 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Red toolbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/blood_red"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="24dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Register as Donor"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Form fields -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Full Name -->
+            <TextView android:text="Full Name *" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey" android:layout_marginBottom="4dp"/>
+            <EditText android:id="@+id/etName"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="Enter your full name" android:inputType="textPersonName"
+                android:background="@color/white" android:paddingStart="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Blood Group Spinner -->
+            <TextView android:text="Blood Group *" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey" android:layout_marginBottom="4dp"/>
+            <Spinner android:id="@+id/spinnerBloodGroup"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:background="@color/white" android:paddingStart="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- City -->
+            <TextView android:text="City / Area *" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey" android:layout_marginBottom="4dp"/>
+            <EditText android:id="@+id/etCity"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="e.g. Mangalore, Udupi"
+                android:background="@color/white" android:paddingStart="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Phone -->
+            <TextView android:text="Phone Number *" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey" android:layout_marginBottom="4dp"/>
+            <EditText android:id="@+id/etPhone"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="10-digit mobile number" android:inputType="phone"
+                android:background="@color/white" android:paddingStart="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Last Donation Date -->
+            <TextView android:text="Last Donation Date" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey" android:layout_marginBottom="4dp"/>
+            <Button android:id="@+id/btnSelectDate"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="Never Donated (tap to change)"
+                android:textColor="@color/medium_grey"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Submit -->
+            <Button android:id="@+id/btnSubmitRegistration"
+                android:layout_width="match_parent" android:layout_height="64dp"
+                android:text="Register as Donor"
+                android:textSize="18sp" android:textColor="@color/white"
+                android:backgroundTint="@color/blood_red"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

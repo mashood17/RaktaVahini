@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary brand red — used for buttons, toolbar, accents -->
+    <color name="blood_red">#C62828</color>          Deep medical red
+    <color name="blood_red_dark">#8E0000</color>     Darker shade for status bar
+    <color name="blood_red_light">#FF5F52</color>    Light for highlights
+
+    <!-- Neutral background and surface colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="background_grey">#F5F5F5</color>   Screen background
+    <color name="dark_grey">#212121</color>        Primary text
+    <color name="medium_grey">#757575</color>      Secondary text
+    <color name="divider_grey">#BDBDBD</color>     Card borders
+
+    <!-- Status indicator colors -->
+    <color name="eligible_green">#2E7D32</color>    Donor is eligible
+    <color name="ineligible_grey">#9E9E9E</color>  (for profile use)
+</resources>
