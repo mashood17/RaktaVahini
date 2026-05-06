@@ -47,4 +47,5 @@ dependencies {
     // RecyclerView + CardView
     implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
 }

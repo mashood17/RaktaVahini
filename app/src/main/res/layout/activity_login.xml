@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="32dp">
+
+        <!-- Logo / Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🩸"
+            android:textSize="64sp"
+            android:layout_marginTop="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rakta-Vahini"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/blood_red"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtered Blood Donor Network"
+            android:textSize="14sp"
+            android:textColor="@color/medium_grey"
+            android:layout_marginTop="4dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- STEP 1: Phone number entry -->
+        <LinearLayout
+            android:id="@+id/layoutPhoneEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your mobile number"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We'll send a one-time password to verify your number"
+                android:textSize="13sp"
+                android:textColor="@color/medium_grey"
+                android:layout_marginBottom="24dp" />
+
+            <!-- +91 prefix + phone input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_text"
+                    android:textStyle="bold"
+                    android:paddingEnd="12dp" />
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="10-digit mobile number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textSize="16sp"
+                    android:background="@drawable/input_background"
+                    android:padding="14dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSendOtp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Send OTP"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/blood_red"
+                android:textColor="@color/white"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+
+        <!-- STEP 2: OTP entry (hidden until OTP is sent) -->
+        <LinearLayout
+            android:id="@+id/layoutOtpEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter OTP"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6-digit OTP sent to your number"
+                android:textSize="13sp"
+                android:textColor="@color/medium_grey"
+                android:layout_marginBottom="24dp" />
+
+            <EditText
+                android:id="@+id/etOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter 6-digit OTP"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:letterSpacing="0.3"
+                android:background="@drawable/input_background"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btnVerifyOtp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Verify &amp; Login"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/blood_red"
+                android:textColor="@color/white"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/tvResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive OTP? Resend"
+                android:textSize="13sp"
+                android:textColor="@color/blood_red"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <!-- Loading indicator -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/blood_red" />
+
+        <TextView
+            android:id="@+id/tvLoadingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/medium_grey"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

@@ -71,6 +71,15 @@
                 android:background="@color/white" android:paddingStart="12dp"
                 android:layout_marginBottom="16dp"/>
 
+            <TextView
+                android:id="@+id/tvPhoneStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
             <!-- Last Donation Date -->
             <TextView android:text="Last Donation Date" android:textStyle="bold"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"

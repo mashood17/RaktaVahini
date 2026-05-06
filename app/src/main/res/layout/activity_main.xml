@@ -84,6 +84,12 @@
             android:textSize="16sp"
             android:textColor="@color/medium_grey"
             android:backgroundTint="@color/background_grey" />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 
     <TextView
@@ -94,5 +100,6 @@
         android:textSize="13sp"
         android:gravity="center"
         android:padding="16dp" />
+
 
 </LinearLayout>

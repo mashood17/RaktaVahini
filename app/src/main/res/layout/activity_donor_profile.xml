@@ -1,0 +1,110 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Red header -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="80dp" android:background="@color/blood_red"
+            android:gravity="center_vertical" android:paddingStart="16dp"
+            android:paddingTop="24dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👤 My Donor Profile"
+                android:textColor="@color/white" android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Profile card -->
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_margin="16dp"
+            app:cardCornerRadius="10dp" app:cardElevation="4dp">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <!-- Blood group + name -->
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                    <TextView android:id="@+id/tvProfileBloodGroup"
+                        android:layout_width="64dp" android:layout_height="64dp"
+                        android:background="@color/blood_red" android:textColor="@color/white"
+                        android:textSize="20sp" android:textStyle="bold"
+                        android:gravity="center" android:layout_marginEnd="16dp"
+                        android:text="--"/>
+                    <LinearLayout android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/tvProfileName"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Loading..." android:textColor="@color/dark_grey"
+                            android:textSize="20sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvProfileCity"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/medium_grey" android:textSize="14sp"
+                            android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider_grey" android:layout_marginBottom="16dp"/>
+
+                <!-- Eligibility status -->
+                <TextView android:id="@+id/tvEligibilityStatus"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Checking eligibility..." android:textSize="15sp"
+                    android:textStyle="bold" android:gravity="center"
+                    android:padding="12dp" android:layout_marginBottom="16dp"/>
+
+                <!-- Availability toggle -->
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Ready to Donate"
+                        android:textColor="@color/dark_grey" android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchAvailability"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Turn off if temporarily unavailable"
+                    android:textColor="@color/medium_grey" android:textSize="12sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Log donation button -->
+        <Button android:id="@+id/btnLogDonation"
+            android:layout_width="match_parent" android:layout_height="64dp"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="🩸  Log a Donation Today"
+            android:textSize="17sp" android:textColor="@color/white"
+            android:backgroundTint="@color/blood_red"/>
+
+        <!-- View log button -->
+        <Button android:id="@+id/btnViewLog"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:text="📋  View Donation History"
+            android:textSize="15sp" android:textColor="@color/medium_grey"
+            android:backgroundTint="@color/white"/>
+
+        <!-- Shown if not registered -->
+        <TextView android:id="@+id/tvNotRegistered"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="You have not registered as a donor yet.\nTap Register on the home screen."
+            android:textColor="@color/medium_grey" android:textSize="15sp"
+            android:gravity="center" android:padding="32dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</ScrollView>

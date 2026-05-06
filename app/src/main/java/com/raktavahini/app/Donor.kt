@@ -1,22 +1,38 @@
 package com.raktavahini.app
 
+import com.google.firebase.firestore.PropertyName
+
 /**
- * Donor data class — maps directly to a Firestore document.
- * ALL fields have defaults so Firestore can deserialize automatically.
+ * Donor data class — maps to Firestore document.
+ * Using @PropertyName to handle Firestore field name mapping explicitly.
+ * All fields have defaults so Firestore can auto-deserialize.
  */
 data class Donor(
-    var id: String = "",               // Firestore document ID
-    val name: String = "",
-    val bloodGroup: String = "",       // e.g. "O+", "A-"
-    val city: String = "",
-    val phone: String = "",
-    val lastDonationDate: Long = 0L,   // Stored as epoch millis; 0 = never donated
-    var isAvailable: Boolean = true    // Donor availability toggle
+    @get:PropertyName("id") @set:PropertyName("id")
+    var id: String = "",
+
+    @get:PropertyName("name") @set:PropertyName("name")
+    var name: String = "",
+
+    @get:PropertyName("bloodGroup") @set:PropertyName("bloodGroup")
+    var bloodGroup: String = "",
+
+    @get:PropertyName("city") @set:PropertyName("city")
+    var city: String = "",
+
+    @get:PropertyName("phone") @set:PropertyName("phone")
+    var phone: String = "",
+
+    @get:PropertyName("lastDonationDate") @set:PropertyName("lastDonationDate")
+    var lastDonationDate: Long = 0L,
+
+    @get:PropertyName("isAvailable") @set:PropertyName("isAvailable")
+    var isAvailable: Boolean = true
 ) {
     /**
      * Core eligibility rule:
      * - Never donated (lastDonationDate == 0) → ELIGIBLE
-     * - Donated more than 90 days ago → ELIGIBLE
+     * - Donated > 90 days ago → ELIGIBLE
      * - Otherwise → NOT eligible
      */
     fun isEligible(): Boolean {
@@ -26,7 +42,7 @@ data class Donor(
         return daysSince > 90
     }
 
-    /** Days remaining until donor becomes eligible again. 0 if already eligible. */
+    /** Days remaining until next eligible. 0 if already eligible. */
     fun daysUntilEligible(): Int {
         if (isEligible()) return 0
         val daysSince = (System.currentTimeMillis() - lastDonationDate) /

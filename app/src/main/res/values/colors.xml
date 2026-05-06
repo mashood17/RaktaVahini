@@ -15,4 +15,6 @@
     <!-- Status indicator colors -->
     <color name="eligible_green">#2E7D32</color>    Donor is eligible
     <color name="ineligible_grey">#9E9E9E</color>  (for profile use)
+    <color name="light_grey">#E0E0E0</color>
+    <color name="dark_text">#212121</color>
 </resources>

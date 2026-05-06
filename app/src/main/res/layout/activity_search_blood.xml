@@ -49,8 +49,27 @@
                 android:layout_height="56dp"
                 android:background="@color/background_grey"
                 android:paddingStart="8dp" />
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🔍  Search Donors"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blood_red"
+                android:layout_marginTop="12dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
 
     <!-- Result count / empty message -->
     <TextView
